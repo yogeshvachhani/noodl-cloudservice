@@ -12,6 +12,30 @@ This project is using `isolated-vm` to execute each Cloud Function in isolation 
 
 Download [Docker Desktop](https://www.docker.com/products/docker-desktop) for Mac or Windows. [Docker Compose](https://docs.docker.com/compose) will be automatically installed. On Linux, make sure you have the latest version of [Compose](https://docs.docker.com/compose/install/).
 
+After installing docker install Git if not already installed on your system.
+
+Here I am providing commands for seting up Git on Ubuntu because that is what I use
+```
+sudo apt install git -y
+```
+After Git is installed clone the repo.
+```
+git clone https://github.com/noodlapp/noodl-cloudservice.git
+```
+
+CD to the folder created by above command.
+```
+cd ./noodl-cloudservice/
+```
+
+Edit the file docker-compose.yml and change the values of:
+- MONGO_INITDB_ROOT_USERNAME
+- MONGO_INITDB_ROOT_PASSWORD
+- MASTER_KEY
+- APP_ID
+
+Also change the `DATABASE_URI` to reflect the username and password that you have changed in above step.
+
 Run in this directory to build and run the Cloud Service with a MongoDB instance:
 
 ```shell
